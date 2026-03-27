@@ -33,7 +33,7 @@ def solve_knapsack(tasks: list[dict], max_time: int) -> dict:
 
     tasks_term = python_tasks_to_prolog(tasks)
 
-    query_text = "solve(Tasks, MaxTime, Ids, TotalTime, TotalPriority)"
+    query_text = "solve_from_string(Tasks, MaxTime, Ids, TotalTime, TotalPriority)"
 
     bindings = {
         "Tasks": tasks_term,

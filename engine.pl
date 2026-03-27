@@ -108,3 +108,8 @@ chosen_ids([task(Id, _, _) | Rest], [Id | IdRest]) :-
 solve(Tasks, MaxTime, Ids, TotalTime, TotalPriority) :-
     best_solution(Tasks, MaxTime, Chosen, TotalTime, TotalPriority),
     chosen_ids(Chosen, Ids).
+
+
+solve_from_string(TasksString, MaxTime, Ids, TotalTime, TotalPriority) :-
+    term_string(Tasks, TasksString),
+    solve(Tasks, MaxTime, Ids, TotalTime, TotalPriority).
